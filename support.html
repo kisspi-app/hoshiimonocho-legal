@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="iPhoneアプリ「ほしいもの帖」のサポートページ">
+<title>ほしいもの帖 サポート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+/* Layout: same notebook sheet as the policy; contact first, then questions as expandable rows */
+:root{
+  --paper:#f3efe8; --sheet:#fbf9f5; --ink:#2a2520; --ink-soft:#5f564c; --ink-faint:#94897c;
+  --rule:#e2dacd; --accent:#7a5a34; --accent-wash:#ece3d4;
+  --font-display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --font-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1b1916; --sheet:#23201c; --ink:#efe9df; --ink-soft:#c3b9ab; --ink-faint:#8c8276;
+  --rule:#3a352e; --accent:#d2ad7b; --accent-wash:#332b21; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1b1916; --sheet:#23201c; --ink:#efe9df; --ink-soft:#c3b9ab; --ink-faint:#8c8276;
+  --rule:#3a352e; --accent:#d2ad7b; --accent-wash:#332b21; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:15.5px;line-height:1.9;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 56px}
+main{max-width:720px;margin:0 auto;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:clamp(24px,5vw,56px)}
+.kicker{font-size:.72rem;letter-spacing:.32em;color:var(--ink-faint);margin:0}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.4;margin:.4em 0 .4em;text-wrap:balance}
+h2{font-family:var(--font-display);font-weight:600;font-size:1.25rem;margin:36px 0 10px;text-wrap:balance}
+p{margin:0 0 12px;max-width:62ch}
+.contact{background:var(--accent-wash);border-radius:4px;padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.contact .mail{font-size:1.1rem;color:var(--accent);font-weight:500;user-select:all;word-break:break-all}
+.contact small{color:var(--ink-soft);font-size:.85rem}
+.copy{align-self:flex-start;font:inherit;font-size:.82rem;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:999px;padding:4px 14px;cursor:pointer}
+.copy:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{border-top:1px solid var(--rule)}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;list-style:none;padding:14px 28px 14px 0;font-weight:500;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:2px;top:14px;color:var(--accent)}
+details[open] summary::after{content:"－"}
+details .a{padding:0 0 14px;color:var(--ink-soft)}
+details .a p{margin:0 0 8px}
+details ol{margin:0 0 8px;padding-left:1.4em}
+a{color:var(--accent);text-underline-offset:3px}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:8px}
+footer{max-width:720px;margin:20px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:.8rem;color:var(--ink-faint)}
+</style>
+</head>
+<body>
+
+<main>
+  <p class="kicker">HOSHIIMONO-CHO SUPPORT</p>
+  <h1>ほしいもの帖 サポート</h1>
+  <p>ほしいもの帖は、気になった商品を通販サイトのページやスクリーンショットから読み取って整理できる、iPhone用の欲しい物リストのアプリです。使い方で困ったときは、下のよくある質問をご覧ください。解決しないときは、メールでお問い合わせください。</p>
+
+  <h2>お問い合わせ</h2>
+  <div class="contact">
+    <span class="mail" id="mail">info@colorofdays.com</span>
+    <small>ご質問・不具合のご連絡はこちらへ。うまく読み取れなかった商品があれば、商品ページのURLを添えていただけると助かります。日本在住の個人開発者（colorofdays）が対応します。返信まで数日いただくことがあります。</small>
+    <button class="copy" id="copy" type="button">アドレスをコピー</button>
+  </div>
+
+  <h2>よくある質問</h2>
+
+  <details><summary>共有ボタンの一覧に「ほしいもの帖」が出てきません</summary><div class="a">
+    <ol><li>Safariや通販アプリで商品ページを開き、共有ボタンを押します</li>
+    <li>アプリが並んでいる列を右端までスクロールし、「その他」を押します</li>
+    <li>「ほしいもの帖」をオンにします。よく使うなら「よく使う項目」に追加しておくと便利です</li></ol>
+  </div></details>
+
+  <details><summary>価格やブランドが空欄のまま登録されます</summary><div class="a">
+    <p>ほしいもの帖は、ページやスクリーンショットに書かれている値だけを使い、推測で埋めることはしません。サイズや色を選ぶまで価格が出ないページなど、読み取れなかった項目は空欄のまま残すので、手で入力してください。</p>
+    <p>同じサイトで何度も読み取れない場合は、商品ページのURLを添えてお知らせください。読み取りの改善に使わせていただきます。</p>
+  </div></details>
+
+  <details><summary>表示されている価格が、今のショップの価格と違います</summary><div class="a">
+    <p>表示される価格は、読み取った時点のものです。商品詳細の「最新価格を確認」を押すと、ショップのページを読み直します。無料版は月5回まで、Proは回数の制限がありません。</p>
+  </div></details>
+
+  <details><summary>iPhoneとiPadでリストが同期されません</summary><div class="a">
+    <ol><li>両方の端末で、同じApple Accountで iCloud にサインインしているか確認します</li>
+    <li>ほしいもの帖の設定で「iCloudで同期」がオンになっているか確認します</li>
+    <li>設定を切り替えた場合は、アプリを一度終了して開き直します</li></ol>
+    <p>通信状況によっては、反映まで少し時間がかかることがあります。</p>
+  </div></details>
+
+  <details><summary>機種変更したらProが外れていました</summary><div class="a">
+    <p>設定画面の「購入を復元」を押してください。Proを購入したときと同じApple Accountでサインインしていれば、追加の料金なしで元に戻ります。Proはファミリー共有にも対応しています。</p>
+  </div></details>
+
+  <details><summary>間違えて商品を削除してしまいました</summary><div class="a">
+    <p>設定画面の「最近削除した項目」から、削除してから30日以内なら元に戻せます。30日を過ぎると完全に削除されます。</p>
+  </div></details>
+
+  <details><summary>データをバックアップしたり、別のアプリに移したりできますか</summary><div class="a">
+    <p>設定画面の「CSVで書き出す」で、登録した商品をCSVファイルとして保存できます。「CSVを読み込む」で、ほかのアプリから移すこともできます。</p>
+  </div></details>
+
+  <details><summary>無料版とProの違いは何ですか</summary><div class="a">
+    <p>登録、一覧、検索、iCloud同期、CSVの書き出しと読み込みは、無料のまま使えます。Pro（800円の買い切り）では、次のことができるようになります。</p>
+    <ol><li>最新価格の確認が無制限（無料版は月5回）</li>
+    <li>複数ショップの価格比較が無制限（無料版は2商品まで）</li>
+    <li>月ごとの予算の設定</li>
+    <li>アプリアイコンの変更</li></ol>
+  </div></details>
+
+  <details><summary>登録した内容を運営者が見ることはありますか</summary><div class="a">
+    <p>ありません。データはお使いのiPhoneと、ご自身のiCloudにだけ保存されます。詳しくはプライバシーポリシーをご覧ください。</p>
+  </div></details>
+
+  <div class="links">
+    <a href="privacy.html">プライバシーポリシー</a>
+  </div>
+</main>
+<footer><span>ほしいもの帖 サポート</span><span>© 2026 colorofdays</span></footer>
+
+<script>
+document.getElementById('copy').addEventListener('click', async (e) => {
+  const btn = e.currentTarget, text = document.getElementById('mail').textContent;
+  try { await navigator.clipboard.writeText(text); btn.textContent = 'コピーしました'; }
+  catch (_) {
+    const r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent = '選択しました。コピーしてください';
+  }
+  setTimeout(() => { btn.textContent = 'アドレスをコピー'; }, 2500);
+});
+</script>
+
+</body>
+</html>
